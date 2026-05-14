@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InOutSafe — Managed Cybersecurity Services</title>
+<meta name="description" content="InOutSafe Pte. Ltd. — Singapore-based managed cybersecurity services. Penetration testing, red teaming, ICS/OT security, application security assessment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--navy:#0F1B2D;--navy-light:#1A2A42;--navy-card:#162236;
+--teal:#00C9A7;--blue:#3B82F6;--orange:#F97316;
+--white:#F8FAFC;--gray:#94A3B8;--dark-gray:#64748B;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--navy);color:var(--white);line-height:1.6;overflow-x:hidden}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px);background:rgba(15,27,45,0.85);border-bottom:1px solid rgba(0,201,167,0.1)}
+.logo{font-size:1.4rem;font-weight:700;letter-spacing:0.5px}
+.logo span{color:var(--teal)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:0.9rem;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal);color:var(--navy);padding:0.5rem 1.25rem;border-radius:6px;text-decoration:none;font-size:0.85rem;font-weight:600;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-50%;right:-30%;width:800px;height:800px;background:radial-gradient(circle,rgba(0,201,167,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-text h1{font-size:3.5rem;font-weight:700;line-height:1.1;margin-bottom:1.5rem}
+.hero-text h1 .highlight{color:var(--teal)}
+.hero-text p{font-size:1.15rem;color:var(--gray);max-width:500px;margin-bottom:2rem;line-height:1.7}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--teal);color:var(--navy);padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:all 0.2s;border:2px solid var(--teal)}
+.btn-primary:hover{background:transparent;color:var(--teal)}
+.btn-secondary{border:2px solid rgba(148,163,184,0.3);color:var(--white);padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.95rem;transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--teal);color:var(--teal)}
+
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.stat-card{background:var(--navy-card);border:1px solid rgba(0,201,167,0.12);border-radius:12px;padding:2rem;text-align:center;transition:border-color 0.3s}
+.stat-card:hover{border-color:rgba(0,201,167,0.35)}
+.stat-num{font-size:2.5rem;font-weight:700;margin-bottom:0.25rem}
+.stat-num.teal{color:var(--teal)}
+.stat-num.blue{color:var(--blue)}
+.stat-num.orange{color:var(--orange)}
+.stat-label{font-size:0.85rem;color:var(--dark-gray);font-weight:400}
+
+section{padding:6rem 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{color:var(--teal);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem}
+.section-title{font-size:2.25rem;font-weight:700;margin-bottom:1rem}
+.section-desc{color:var(--gray);font-size:1.05rem;max-width:600px;margin-bottom:3rem}
+
+.services{background:var(--navy-light)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card{background:var(--navy);border:1px solid rgba(0,201,167,0.08);border-radius:12px;padding:2rem;transition:all 0.3s}
+.service-card:hover{border-color:rgba(0,201,167,0.3);transform:translateY(-2px)}
+.service-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.3rem}
+.service-icon.teal{background:rgba(0,201,167,0.12);color:var(--teal)}
+.service-icon.blue{background:rgba(59,130,246,0.12);color:var(--blue)}
+.service-icon.orange{background:rgba(249,115,22,0.12);color:var(--orange)}
+.service-card h3{font-size:1.15rem;font-weight:600;margin-bottom:0.5rem}
+.service-card p{font-size:0.9rem;color:var(--gray);line-height:1.6}
+
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.why-card{text-align:center;padding:2rem 1.5rem}
+.why-num{font-size:3rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem}
+.why-card h3{font-size:1.1rem;font-weight:600;margin-bottom:0.5rem}
+.why-card p{font-size:0.9rem;color:var(--gray);line-height:1.6}
+
+.method{background:var(--navy-light)}
+.method-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.method-step{padding:2rem;text-align:center;position:relative}
+.method-step::after{content:"";position:absolute;top:2.5rem;right:0;width:40px;height:2px;background:rgba(0,201,167,0.25)}
+.method-step:last-child::after{display:none}
+.step-num{width:40px;height:40px;border-radius:50%;background:rgba(0,201,167,0.12);color:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-weight:700;font-size:0.95rem}
+.method-step h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem}
+.method-step p{font-size:0.85rem;color:var(--gray)}
+
+.markets-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.market-card{background:var(--navy-card);border:1px solid rgba(0,201,167,0.08);border-radius:12px;padding:2.5rem;transition:border-color 0.3s}
+.market-card:hover{border-color:rgba(0,201,167,0.3)}
+.market-flag{font-size:2.5rem;margin-bottom:1rem}
+.market-card h3{font-size:1.3rem;font-weight:600;margin-bottom:0.5rem}
+.market-card p{font-size:0.9rem;color:var(--gray);line-height:1.6}
+.market-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+.market-tag{background:rgba(0,201,167,0.08);color:var(--teal);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:500}
+
+.cta{background:linear-gradient(135deg,rgba(0,201,167,0.08) 0%,rgba(59,130,246,0.05) 100%);border-top:1px solid rgba(0,201,167,0.1);text-align:center}
+.cta .section-title{max-width:600px;margin:0 auto 1rem}
+.cta .section-desc{margin:0 auto 2.5rem}
+.cta-info{display:flex;justify-content:center;gap:3rem;margin-top:2.5rem;flex-wrap:wrap}
+.cta-item{display:flex;align-items:center;gap:0.5rem;color:var(--gray);font-size:0.95rem}
+.cta-item span{color:var(--teal)}
+
+footer{padding:2rem;text-align:center;color:var(--dark-gray);font-size:0.8rem;border-top:1px solid rgba(148,163,184,0.1)}
+
+@media(max-width:900px){
+.hero-inner{grid-template-columns:1fr;text-align:center}
+.hero-text h1{font-size:2.5rem}
+.hero-text p{margin:0 auto 2rem}
+.hero-buttons{justify-content:center}
+.hero-stats{max-width:400px;margin:0 auto}
+.why-grid{grid-template-columns:1fr}
+.markets-grid{grid-template-columns:1fr}
+.method-steps{grid-template-columns:1fr}
+.method-step::after{display:none}
+.nav-links{display:none}
+}
+@media(max-width:480px){
+.hero-text h1{font-size:2rem}
+.hero-stats{grid-template-columns:1fr}
+.cta-info{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">InOut<span>Safe</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#industries">Industries</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Secure what matters.<br><span class="highlight">Inside and out.</span></h1>
+      <p>Singapore-based managed cybersecurity services. We find vulnerabilities before attackers do — across networks, applications, and industrial control systems.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Request Assessment</a>
+        <a href="#services" class="btn-secondary">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num teal">300+</div><div class="stat-label">Security audits per year</div></div>
+      <div class="stat-card"><div class="stat-num blue">250+</div><div class="stat-label">Zero-days discovered</div></div>
+      <div class="stat-card"><div class="stat-num orange">350+</div><div class="stat-label">DFIR experts on call</div></div>
+      <div class="stat-card"><div class="stat-num teal">99%</div><div class="stat-label">Pentest success rate</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-tag">What we do</div>
+    <h2 class="section-title">Comprehensive security services</h2>
+    <p class="section-desc">Five specialized service lines covering the full spectrum of cybersecurity — from application code to industrial control systems.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon teal">&#128269;</div>
+        <h3>Penetration Testing</h3>
+        <p>Black box, grey box, and white box testing across infrastructure, web applications, mobile apps, and APIs. We think like attackers to find what scanners miss.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon blue">&#128187;</div>
+        <h3>Application Security</h3>
+        <p>Source code review, SAST/DAST analysis, and secure SDLC consulting. We embed security into your development lifecycle from day one.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon orange">&#9876;</div>
+        <h3>Red Teaming</h3>
+        <p>Full-scope adversary simulation — social engineering, physical intrusion, and cyber attacks combined. Test your defenses against real-world threat scenarios.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon teal">&#127981;</div>
+        <h3>ICS/OT Security</h3>
+        <p>Industrial control system assessment for energy, manufacturing, mining, and critical infrastructure. Purdue Model-aligned architecture review and SCADA hardening.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon blue">&#128179;</div>
+        <h3>ATM &amp; POS Security</h3>
+        <p>Financial terminal security assessment — network attacks, black box attacks, card data interception, and ATM malware analysis for banks and payment processors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-inner">
+    <div class="section-tag">Why InOutSafe</div>
+    <h2 class="section-title">Built for APAC. Proven globally.</h2>
+    <p class="section-desc">Singapore-headquartered with deep expertise across Southeast Asia, South Asia, and Central Asia.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-num">10+</div><h3>Years of offensive security</h3><p>Our team brings over a decade of hands-on experience in vulnerability research, exploit development, and incident response.</p></div>
+      <div class="why-card"><div class="why-num">15+</div><h3>Countries served</h3><p>Delivering on the ground across APAC — from Southeast Asia to South Asia and Central Asia.</p></div>
+      <div class="why-card"><div class="why-num">24/7</div><h3>Incident response</h3><p>Round-the-clock DFIR capability with rapid deployment teams ready to contain and investigate security incidents.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="methodology">
+  <div class="section-inner">
+    <div class="section-tag">How we work</div>
+    <h2 class="section-title">Engagement process</h2>
+    <p class="section-desc">A structured five-phase approach ensures thoroughness, transparency, and actionable outcomes.</p>
+    <div class="method-steps">
+      <div class="method-step"><div class="step-num">1</div><h3>Scoping</h3><p>Define targets, rules of engagement, and success criteria</p></div>
+      <div class="method-step"><div class="step-num">2</div><h3>Reconnaissance</h3><p>OSINT gathering, attack surface mapping, and threat modeling</p></div>
+      <div class="method-step"><div class="step-num">3</div><h3>Exploitation</h3><p>Active testing with manual techniques and custom tooling</p></div>
+      <div class="method-step"><div class="step-num">4</div><h3>Reporting</h3><p>Executive summary, technical findings, and remediation roadmap</p></div>
+      <div class="method-step"><div class="step-num">5</div><h3>Retest</h3><p>Verify fixes and confirm vulnerability remediation</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="industries">
+  <div class="section-inner">
+    <div class="section-tag">Industries we protect</div>
+    <h2 class="section-title">Security across critical sectors</h2>
+    <p class="section-desc">Real-world offensive security experience across the industries where a breach isn't just costly — it's dangerous.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon teal">&#9881;</div>
+        <h3>Energy &amp; Mining</h3>
+        <p>SCADA/DCS assessment, Purdue Model architecture review, and OT network segmentation for power plants, refineries, and mining operations.</p>
+        <div class="market-tags"><span class="market-tag">SCADA/DCS</span><span class="market-tag">OT Networks</span><span class="market-tag">IEC 62443</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon blue">&#127974;</div>
+        <h3>Banking &amp; Finance</h3>
+        <p>ATM/POS terminal security, core banking penetration testing, SWIFT network assessment, and digital payment infrastructure hardening.</p>
+        <div class="market-tags"><span class="market-tag">ATM Security</span><span class="market-tag">SWIFT</span><span class="market-tag">PCI DSS</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon orange">&#127981;</div>
+        <h3>Manufacturing</h3>
+        <p>Industrial IoT security, MES/ERP penetration testing, supply chain risk assessment, and smart factory OT/IT convergence security.</p>
+        <div class="market-tags"><span class="market-tag">IIoT</span><span class="market-tag">MES/ERP</span><span class="market-tag">Supply Chain</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon teal">&#127961;</div>
+        <h3>Government &amp; Defense</h3>
+        <p>Critical infrastructure protection, national CERT support, red team exercises for government agencies, and classified network assessments.</p>
+        <div class="market-tags"><span class="market-tag">CERT</span><span class="market-tag">Red Team</span><span class="market-tag">Critical Infra</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon blue">&#128225;</div>
+        <h3>Telecom</h3>
+        <p>5G/LTE core network testing, SS7/Diameter protocol security, BSS/OSS penetration testing, and telco cloud infrastructure assessment.</p>
+        <div class="market-tags"><span class="market-tag">5G/LTE</span><span class="market-tag">SS7</span><span class="market-tag">Cloud Infra</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get started</div>
+    <h2 class="section-title">Let&#39;s secure your business</h2>
+    <p class="section-desc">Whether you need a one-time assessment or ongoing managed security — we&#39;re ready to help.</p>
+    <div class="hero-buttons" style="justify-content:center">
+      <a href="mailto:contact@inoutsafe.ai" class="btn-primary">contact@inoutsafe.ai</a>
+    </div>
+    <div class="cta-info">
+      <div class="cta-item"><span>&#9670;</span> InOutSafe Pte. Ltd.</div>
+      <div class="cta-item"><span>&#9670;</span> Singapore</div>
+      <div class="cta-item"><span>&#9670;</span> Lee Han Sang — Chairman</div>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 InOutSafe Pte. Ltd. All rights reserved.</footer>
+
+</body>
+</html>
